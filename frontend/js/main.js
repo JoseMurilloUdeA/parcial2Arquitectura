@@ -13,7 +13,7 @@ document.getElementById("productoForm").addEventListener("submit", function(e) {
         name: nombre,
         description: descripcion,
         price: precio,
-        initial_amout: cantidad
+        initialAmout: cantidad
     };
 
     fetch(`${API_BASE_URL}/api/v1/storage/${sede}/products`, {
