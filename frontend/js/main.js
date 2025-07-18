@@ -64,7 +64,7 @@ function consultarInventario() {
             const lista = document.createElement("ul");
             data.forEach(prod => {
                 const item = document.createElement("li");
-                item.textContent = `${prod.name} - ${prod.initial_amout} unidades - $${prod.price}`;
+                item.textContent = `${prod.name} - ${prod.initialAmout} unidades - $${prod.price}`;
                 lista.appendChild(item);
             });
             resultadoDiv.appendChild(lista);
