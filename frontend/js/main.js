@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://endless-selected-leech.ngrok-free.app";
+const API_BASE_URL = "http://localhost:8081"; // <--- Reemplázala con tu URL real cuando esté disponible
 
 document.getElementById("productoForm").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -13,7 +13,7 @@ document.getElementById("productoForm").addEventListener("submit", function(e) {
         name: nombre,
         description: descripcion,
         price: precio,
-        initialAmout: cantidad
+        initialAmount: cantidad
     };
 
     fetch(`${API_BASE_URL}/api/v1/storage/${sede}/products`, {
@@ -38,7 +38,6 @@ document.getElementById("productoForm").addEventListener("submit", function(e) {
     });
 });
 
-
 function consultarInventario() {
     const sede = document.getElementById("consultaSede").value;
 
@@ -60,11 +59,13 @@ function consultarInventario() {
         const resultadoDiv = document.getElementById("resultadoInventario");
         resultadoDiv.innerHTML = "<h3>Productos encontrados:</h3>";
 
-        if (Array.isArray(data) && data.length > 0) {
+        const productos = data._embedded?.productDtoList;
+
+        if (Array.isArray(productos) && productos.length > 0) {
             const lista = document.createElement("ul");
-            data.forEach(prod => {
+            productos.forEach(prod => {
                 const item = document.createElement("li");
-                item.textContent = `${prod.name} - ${prod.initialAmout} unidades - $${prod.price}`;
+                item.textContent = `${prod.name} - ${prod.initialAmount} unidades - $${prod.price}`;
                 lista.appendChild(item);
             });
             resultadoDiv.appendChild(lista);
