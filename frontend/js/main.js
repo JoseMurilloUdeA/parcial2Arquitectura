@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8081"; // <--- Reemplázala con tu URL real cuando esté disponible
+const API_BASE_URL = "https://endless-selected-leech.ngrok-free.app";
 
 document.getElementById("productoForm").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -20,7 +20,7 @@ document.getElementById("productoForm").addEventListener("submit", function(e) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "X-API-Version": "v1"
+            "X-API-Version": "1"
         },
         body: JSON.stringify(data)
     })
@@ -49,7 +49,7 @@ function consultarInventario() {
 
     fetch(`${API_BASE_URL}/api/v1/storage/${sede}/products`, {
         headers: {
-            "X-API-Version": "v1"
+            "X-API-Version": "1"
         }
     })
     .then(res => {
