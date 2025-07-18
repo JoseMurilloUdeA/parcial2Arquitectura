@@ -8,20 +8,6 @@ Incluye funcionalidades para:
 - Respuestas en formato JSON
 - HATEOAS
 
-## 🧱 Estructura del Proyecto
-frontend/             # HTML, CSS y JavaScript Vanilla
-│   ├── index.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── main.js
-
-backend/              # Java Spring Boot API
-│   ├── src/...
-│   └── Dockerfile
-
-README.md
-
 ## Tecnologías Utilizadas
 
 ### Backend
@@ -86,10 +72,6 @@ La interfaz permite:
 ### Configuración inicial
 
 1. Edita el archivo `js/main.js` y cambia la variable `API_BASE_URL`:
-
-````js
-const API_BASE_URL = "http://localhost:8080"; // <-- Usa tu URL real
-````
 
 2. Abre `frontend/index.html` en tu navegador.
 
